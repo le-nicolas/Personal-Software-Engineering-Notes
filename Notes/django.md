@@ -28,4 +28,4 @@ One-to-One Relations
 class Author
     address = models.OneToOneField(Address, on_delete=models.CASCADE, null=True)
 ```
-![Uploading image.png…]()
+
