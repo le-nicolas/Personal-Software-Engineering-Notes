@@ -18,7 +18,7 @@ data = [1, 2, 3]  # list
 | Operator | Description | Example |
 |----------|-------------|---------|
 |   &      | bitwise AND | A & b   |  
-|   |      | bitwise OR  | a | b   |
+|   '|'      | 'bitwise OR'  | 'a | b'   |
 |   ^      | XOR         | a^b     |
 |   ~      | bitwise NOT | ~a      |
 |   <<     | bitwise left shift | a  << b|
