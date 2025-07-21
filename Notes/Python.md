@@ -17,7 +17,11 @@ data = [1, 2, 3]  # list
 ### Bitwise & Comparison Operators
 | Operator | Description | Example |
 |----------|-------------|---------|
-|   &      | bitwise AND |bitwise OR|  
+|   &      | bitwise AND | A & b   |  
+|   |      | bitwise OR  | a | b   |
+|   ^      | XOR         | a^b     |
+|   ~      | bitwise NOT | ~a      |
+|   <<     | bitwise left shift | a  << b|
 
 ### Functions
 ``` python
