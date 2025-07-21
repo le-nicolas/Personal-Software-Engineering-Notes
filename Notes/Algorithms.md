@@ -87,10 +87,10 @@ ________________________________________________________________________________
 |Algorithm|	Time complexity|	|	Space Complexity|	|
 |---------|--------------------|--------|-----------------------|-------|
 |	|Best|	Average|	Worst|	Worst|
-Mergesort	O(n log n)	O(n log n)	O(n log n)	O(n)
-Quicksort	O(n log n)	O(n log n)	O(n^2)	O(log n) - O(n)
-Insertion Sort	O(n)	O(n^2)	O(n^2)	O(1)
-Bucket Sort	O(n+k)	O(n+k)	O(n^2)	O(n)
+|Mergesort|	O(n log n)|	O(n log n)|	O(n log n)|	O(n)|
+|Quicksort|	O(n log n)|	O(n log n)|	O(n^2)|	O(log n) - O(n)|
+|Insertion Sort|	O(n)|	O(n^2)|	O(n^2)|	O(1)|
+|Bucket Sort|	O(n+k)|	O(n+k)|	O(n^2)|	O(n)|
 
 Handy algorithms
 	• Listing all contiguous subarrays
