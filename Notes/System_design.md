@@ -1,4 +1,4 @@
-Amazon Relational Database Service(RDS), can get you a database server with 24 TB of Ram, e.g. stackoverflow in 2013 had over 10 million monthly unique visitor, but it only had 1 master database. Woah!
+<img width="2319" height="818" alt="image" src="https://github.com/user-attachments/assets/960fc7a5-7c1e-42a8-9c48-6885496fa23b" />Amazon Relational Database Service(RDS), can get you a database server with 24 TB of Ram, e.g. stackoverflow in 2013 had over 10 million monthly unique visitor, but it only had 1 master database. Woah!
 _____________________________________________________________________________________
 
 <img width="1280" height="720" alt="1719946058232" src="https://github.com/user-attachments/assets/75644f7a-badd-4ec2-bfd2-c6c428a62141" />
@@ -15,58 +15,63 @@ ________________________________________________________________________________
 |40|	1 Trillion|	1 tb|	1000000000000|	12|
 |50|	1 Quadrillion|	1 Pb|	1000000000000000|	15|
 
-Big data = Tb or Petabytes
+## Big data = Tb or Petabytes
+|Item|	Size|
+|----|------|
+|1 Byte	|8 bits|
+|1 IPv4 Address|	4 Bytes|
+|1 Unix Timestamp|	4 Bytes|
+|1 IPv6 Address|	16 Bytes|
 
-Item	Size
-1 Byte	8 bits
-1 IPv4 Address	4 Bytes
-1 Unix Timestamp	4 Bytes
-1 IPv6 Address	16 Bytes
-
-Size of commonly used resources
-
-Item	Size/Unit	Notes
-ASCII character	1 byte	Standard ASCII uses 7 bits, but 1 byte is common
-UTF-8 character	1 to 4 bytes	Variable-length encoding.
-UUID	16 bytes	Consists of a mix of numbers and letters
-Image ( jpeg)	~500 Kb to 5 MB or more per image	Depends on resolution and compression
-Image PNG	~200 kb to 10 MB or more per image	Lossless compression, larger files
-Video (720p)	~1.5 GB per hour	Depends on bitrate and codec
-Video 1080p	~3 gb per hour	Higher resolution increases its size
-Audio mp3	~1 mb per minute	Depends on bitrate (128 kbps)
-Email	Varies [~20KB for text only]	Size can vary depending on content, attachments, and encoding
-Web page (HTML)	~1kb to 1 MB per page	Depends on content and resources
-Book	~300kb to 2mb 	Depends on formatting and length
-Ten page docu	~100 KB to 500 KB	Varies with images, formatting, and content
-
-
-Networks
-Estimated Round-trip Times** (RTT):
-
-Distance Type	Typical Latency
-Within the same continent	20 to 100 ms
-Intercontinental	100 to 200 ms
-Around the world	300 ms or more
-
-Time values and relations
-
-Time unit	Estimate Value in relation to
-Days in a month	30 days/month
-Hours in a month	720
-Minutes	40000
-Seconds	2,500,000
-Seconds in a day	100,000
-
-Requests per x	Request per y
-1 billion/month	33,333,333 per day
-1 billion/month	400 per second
-1 million/month	33,333 per day
-1 million/month	0.4 per second
-
-Therefore, uploading a file of 100 gb with a connection of 100mpbs takes 2 hours
+## Size of commonly used resources
+|Item|	Size/Unit|	Notes|
+|----|-----------|-----------|
+|ASCII character|	1 byte|	Standard ASCII uses 7 bits, but 1 byte is common|
+|UTF-8 character|	1 to 4 bytes|	Variable-length encoding.|
+|UUID|	16 bytes|	Consists of a mix of numbers and letters|
+|Image ( jpeg)|	~500 Kb to 5 MB or more per image|	Depends on resolution and compression|
+|Image PNG|	~200 kb to 10 MB or more per image|	Lossless compression, larger files|
+|Video (720p)|	~1.5 GB per hour|	Depends on bitrate and codec|
+|Video 1080p|	~3 gb per hour|	Higher resolution increases its size|
+|Audio mp3|	~1 mb per minute|	Depends on bitrate (128 kbps)|
+|Email|	Varies [~20KB for text only]|	Size can vary depending on content, attachments, and encoding|
+|Web page (HTML)|	~1kb to 1 MB per page|	Depends on content and resources|
+|Book|	~300kb to 2mb| 	Depends on formatting and length|
+|Ten page docu|	~100 KB to 500 KB|	Varies with images, formatting, and content|
 
 
-DB
+## Networks
+> Estimated Round-trip Times** (RTT):
+
+|Distance Type|	Typical Latency|
+|-------------|----------------|
+|Within the same continent|	20 to 100 ms|
+|Intercontinental|	100 to 200 ms|
+|Around the world|	300 ms or more|
+
+## Time values and relations
+
+|Time unit|	Estimate Value in relation to|
+|---------|----------------------------------|
+|Days in a month|	30 days/month|
+|Hours in a month|	720|
+|Minutes|	40000|
+|Seconds|	2,500,000|
+|Seconds in a day|	100,000|
+
+|Requests per x|	Request per y|
+|--------------|---------------------|
+|1 billion/month|	33,333,333 per day|
+|1 billion/month|	400 per second|
+|1 million/month|	33,333 per day|
+|1 million/month|	0.4 per second|
+
+> Therefore, uploading a file of 100 gb with a connection of 100mpbs takes 2 hours
+
+
+### DataBase
+___________________________________________________________________________________
+
 
 Write capacity
 	As an estimate, a single PostgreSQL instance in AWX can handle around 5,000 to 20,000 writes per second ( PER NODE). The reason for the wide throughput window is that this largely depends on the size of your writes.
@@ -76,35 +81,39 @@ Quorum consensus
 	• W: the number of nodes that need to acknowledge (return 201) when you perform a write operation
 	• R: the number of nodes that need to be probed when you perform a Read operation. This is so you can compare their response and use the most recent data
 	• IF W + R > N, strong consistency is guaranteed because there's an overlapping node that has the latest data to ensure consistency.
-	Configuration	Description
-	R = 1 and W = N	Optimized for a fast read
-	W = 1 and R = N	Optimized for a fast write
-	W + R > N	Strong consistency guaranteed ( usually N = 3, W = R = 2)
-	W + R < = N	Strong consistency not guaranteed
+	|Configuration|	Description|
+ 	|-------------|------------|
+	|R = 1 and W = N|	Optimized for a fast read|
+	|W = 1 and R = N|	Optimized for a fast write|
+	|W + R > N|	Strong consistency guaranteed ( usually N = 3, W = R = 2)|
+	|W + R < = N|	Strong consistency not guaranteed|
 		
-Consistency Models	Description
-Strong consistency	Any read operation returns the most updated value; clients never see out-of-data data.
-Weak consistency	Subsequent read operation may not see the most updated value
-Eventual consistency	Given enough time, all updates are propagated, and all replicas become consistent(weak consistency variant.)
-	Ø Strong consistency is usually achieved by forcing a replica not to accept new reads/writes until every replica has agreed on current write. This approach is not ideal for highly available systems because it could block new operations.
+|Consistency Models|	Description|
+|------------------|---------------|
+|Strong consistency|	Any read operation returns the most updated value; clients never see out-of-data data.|
+|Weak consistency|	Subsequent read operation may not see the most updated value|
+|Eventual consistency|	Given enough time, all updates are propagated, and all replicas become consistent(weak consistency variant.)|
+	* Strong consistency is usually achieved by forcing a replica not to accept new reads/writes until every replica has agreed on current write. This approach is not ideal for highly available systems because it could block new operations.
 
 
-API :D
+### API :D
+________________________________________________________________________________
+## Rest
 
-Rest
-	Request anatomy
+Request anatomy
 	
-	1. method
-		Method	Description
-		Get	Retrieve data from the server
-		Post	Submit data to the server, creating a resource.
-		Put	Update an existing resource or create it if it doesn’t exist.
-		Delete	Remove a source from the server
-		Patch	Partially update an existing resource
-		Head	Similar to get, but retrieves only headers
-		Options	Describes the communication options for the target resource
+1. method
+		|Method|	Description|
+		|------|-------------------|
+		|Get|	Retrieve data from the server|
+		|Post|	Submit data to the server, creating a resource.|
+		|Put|	Update an existing resource or create it if it doesn’t exist.|
+		|Delete|	Remove a source from the server|
+		|Patch|	Partially update an existing resource|
+		|Head|	Similar to get, but retrieves only headers|
+		|Options|	Describes the communication options for the target resource|
 	
-	2. Url
+3. Url
 		a. Protocol: http or https
 		b. Domain: the server's address ( dns.example.com)
 		c. Path: the specific resource ( e.g. /user/213)
@@ -134,28 +143,30 @@ Rest
 				    "age": 30
 				  }
 
-HTTP status codes
-Status code category	Description	Examples
-1xx	Informational	100 ( continue)
-		101 ( switching protocols)
-2xx	Successful	200 (OK)
-		201 (created)
-		202(accepted)
-3xx	Redirection	301 (moved permanently)
-		307 (temporary redirect)
-4xx	Client error	400 (bad request)
-		403 (Forbidden)
-		404 (Not found)
-5xx	Server error	500 (internal server error)
-		502 (bad gateway)
-		503 (service unavailable)
+## HTTP status codes
+|Status code category|	Description|	Examples|
+|--------------------|-------------|------------|
+|1xx|	Informational|	100 ( continue)|
+|	|	|101 ( switching protocols)|
+|2xx|	Successful|	200 (OK)|
+|	|	|201 (created)|
+|	|	|202(accepted)|
+|3xx|	Redirection|	301 (moved permanently)|
+|	|	|307 (temporary redirect)|
+|4xx|	Client error|	400 (bad request)|
+|	|	|403 (Forbidden)|
+|	|	|404 (Not found)|
+|5xx|	Server error|	500 (internal server error)|
+|	|	|502 (bad gateway)|
+|	|	|503 (service unavailable)|
 
 Hashing and consistent hashing
 	Hash function outputs ( https://md5calc.com/hash/sha256/LSKDJFHSFA)
-	Hash function	Output
-	CRC32	747900d0
-	SHA1	Ffb9e0aec8fefa6497076632823d7bb0704dff95
-	SHA256	9b6e9d23eaf779fc30ec88e4ff7ee734528a4b5844234e0247c5ce7ef1a3fd0f
+	|Hash function|	Output|
+	|-------------|-------| 
+	|CRC32|	747900d0|
+	|SHA1|	Ffb9e0aec8fefa6497076632823d7bb0704dff95|
+	|SHA256|	9b6e9d23eaf779fc30ec88e4ff7ee734528a4b5844234e0247c5ce7ef1a3fd0f|
 		
 Re-read
 	• Sloppy Quorums 
@@ -174,24 +185,26 @@ Re-read
 		○ Where you measure time from a timestamp ( unix )
 
 
-Fundamentals
+### Fundamentals
+______________________________________________________________________________________
 
-Functional vs non-functional requirements
+**Functional vs non-functional requirements**
 
-Functional requirements	Non-functional requirements
-A functional requirement defines a system or its components	Whereas for non-functional, it defines the quality attribute of a software system.
-It specifies " what should the software system do?"	This places constraints on " how should the software system fulfill the functional requirement?"
-Functional requirement is specified by User	Non-functional requirement is specified by technical peoples ( technical leaders, architect and software developers.
-It is mandatory	Not mandatory
-It is capture in use case	Captured as a quality attribute
-Defined at a component level	Applied to a system as a whole
-Helps you verify the functionality of the software	Helps you to verify the performance of the software
-Functional testing like system, integration, end to end, api testing, and other are done.	Non-functional testing like performance, stress, usability, security testing, are done
-Usually easy to define	Usually more difficult to define
-Examples	
-Authentication of user whenever he/she logs in to the system	Emails should be sent with a latency of no greater than 12 hours from such an activity
-System shutdown in case of a cyber attack	The processing of each request should be done within 10 secs
-Verification email is sent to user whenever it registers for the first time on some software system	The site should load in 3 seconds when the number of simultaneous user are > 10000
+|Functional requirements|	Non-functional requirements|
+|-----------------------|----------------------------------|
+|A functional requirement defines a system or its components|	Whereas for non-functional, it defines the quality attribute of a software system.|
+|It specifies " what should the software system do?"|	This places constraints on " how should the software system fulfill the functional requirement?"|
+|Functional requirement is specified by User|	Non-functional requirement is specified by technical peoples ( technical leaders, architect and software developers.|
+|It is mandatory|	Not mandatory|
+|It is capture in use case|	Captured as a quality attribute|
+|Defined at a component level|	Applied to a system as a whole|
+|Helps you verify the functionality of the software|	Helps you to verify the performance of the software|
+|Functional testing like system, integration, end to end, api testing, and other are done.|	Non-functional testing like performance, stress, usability, security testing, are done|
+|Usually easy to define|	Usually more difficult to define|
+|Examples|	|
+|Authentication of user whenever he/she logs in to the system|	Emails should be sent with a latency of no greater than 12 hours from such an activity|
+|System shutdown in case of a cyber attack|	The processing of each request should be done within 10 secs|
+|Verification email is sent to user whenever it registers for the first time on some software system|	The site should load in 3 seconds when the number of simultaneous user are > 10000|
 
 Napkin math - " sharding; the horizontal scaling of DBs"
 	Ø Sharding separates large databases into smaller, more easily managed parts called shards. Each shard shares the same schema, though the actual data on each shard is unique to the shard.
@@ -200,6 +213,7 @@ Napkin math - " sharding; the horizontal scaling of DBs"
 
 Latency numbers every programmer should know! (https://colin-scott.github.io/personal_website/research/interactive_latency.html) when working with data.
 
+<img width="2319" height="818" alt="image" src="https://github.com/user-attachments/assets/d6c794a4-e0d4-4e26-8c04-92007f78448d" />
 
 
 
@@ -320,12 +334,13 @@ API DESIGN
 	Ø Read
 		○ GET /v1/products
 			§ Retrieves a list of products with pagination
-			§ Query Parameters 	?page=2&limit=50
-			Response	{
+			§ |Query Parameters| 	?page=2&limit=50|
+   			  |----------------|--------------------|
+			|Response|	{
 				  "products": [{ "id": 123, "name": "Product A", "price": 100 }, ...],
 				  "page": 2,
 				  "totalPages": 10
-				}
+				}|
 			
 			- GET /v1/products/{id}
 			Retrieves a specific product by ID.
@@ -358,4 +373,5 @@ API DESIGN
 	4. Use HTTP Methods Correctly: Use GET for retrieval, POST for creation, PUT for full updates, PATCH for partial updates, and DELETE for removal.
 	5. Status Codes: Return appropriate HTTP status codes (e.g., 200, 201, 204, 404, 500).
 	
-Extra 	https://www.hellointerview.com/practice
+|Extra |	https://www.hellointerview.com/practice|
+|------|-----------------------------------------------|
