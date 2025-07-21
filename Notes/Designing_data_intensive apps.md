@@ -1,72 +1,82 @@
-Designing Data-intensive apps
-Availability - percentage of time a system or service is operational and accessible when needed. It measures how often the system is up compared to the total time it should be available.
+### Designing Data-intensive apps
+____________________________________________________________________________________
+**Availability** - percentage of time a system or service is operational and accessible when needed. It measures how often the system is up compared to the total time it should be available.
 
-Reliability - Measures how consistently and correctly a system performs its intended functions over time without failure.
-	Measurement: Often assessed using metrics such as Mean Time between Failures or Mean time to failure, which quantifies how long the system performs correctly before encountering a failure.
+**Reliability** - Measures how consistently and correctly a system performs its intended functions over time without failure.
+	* Measurement: Often assessed using metrics such as Mean Time between Failures or Mean time to failure, which quantifies how long the system performs correctly before encountering a failure.
 	
-Redundancy - The inclusion of extra components or systems to ensure continued operation in the event of a failure.
-	- Hardware: Spare hardware components ( server, power supplies, network links) that can take over if primary components fail.
-	- Data redundancy: replicating data across multiple storage devices or locations ot protect against data loss.
-	- Geographic redundancy: across different locations or data centers to protect against site-specific failures.
-
-Maintainability - system can work productively over time
-	Operability: make it easy for operations teams to keep the system running smoothly
-	Simplicity: make it easy for new engineers to understand the system
-	Evolvability: make it easy for engineers to make changes to the system in the future.
+**Redundancy** - The inclusion of extra components or systems to ensure continued operation in the event of a failure.
 	
-Fault - deviation of one component from its specification
-Failure - when the system as a whole stops providing the required service to the user.
-
-Rolling upgrade - method of upgrading a system without shutting it down or interrupting its operation
-
-Throughput - the amount of work processed by a system or component in a given amount of time
-	E.g. systems performance: requests per second
-	Networks: Megabits per second
-	Databases: Queries per second
+ 	- Hardware: Spare hardware components ( server, power supplies, network links) that can take over if primary components fail.
 	
-Latency - the time delay between the initiation of a request and the beginning of a response
+ 	- Data redundancy: replicating data across multiple storage devices or locations ot protect against data loss.
+	
+ 	- Geographic redundancy: across different locations or data centers to protect against site-specific failures.
 
-Service time - the time it takes to process a request, including tasks like authorization and load balancing.
+**Maintainability** - system can work productively over time
 
-Response time - Total time from the initiation of a request until the entire response is received and processed. Encompasses both latency and service time.
-	Metric: 
+	1. Operability: make it easy for operations teams to keep the system running smoothly
+
+ 	2. Simplicity: make it easy for new engineers to understand the system
+	
+ 	3. Evolvability: make it easy for engineers to make changes to the system in the future.
+	
+**Fault** - deviation of one component from its specification
+
+**Failure** - when the system as a whole stops providing the required service to the user.
+
+**Rolling upgrade** - method of upgrading a system without shutting it down or interrupting its operation
+
+**Throughput** - the amount of work processed by a system or component in a given amount of time
+	* E.g. systems performance: requests per second
+		Networks: Megabits per second
+		Databases: Queries per second
+	
+**Latency** - the time delay between the initiation of a request and the beginning of a response
+
+**Service time** - the time it takes to process a request, including tasks like authorization and load balancing.
+
+**Response time** - Total time from the initiation of a request until the entire response is received and processed. Encompasses both latency and service time.
+	*Metric: 
 		Average response time: often reported as the arithmetic mean, but may not reflect the typical user experience.
 		
 		Percentile: provide a better understanding of response time, with the median being the halfway point. Percentile algorithms including the 
 			Forward Decay, T-Digest, HDRHistogram
 			
-Scaling 
-	Vertical scaling: Scaling up by improving the hardware of the hosting machine.
-	Horizontal Scaling: Scaling out by adding more machines to handle increased load. Known as a shared-nothing architecture
+
+**Scaling** 
+	- Vertical scaling: Scaling up by improving the hardware of the hosting machine.
+	- Horizontal Scaling: Scaling out by adding more machines to handle increased load. Known as a shared-nothing architecture
 	
-SLA ( service level agreement) - contracts that define the expected performance and availability of a service.
+**SLA ( service level agreement)** - contracts that define the expected performance and availability of a service.
 
-Telemetry - monitoring performance metrics and error rates. Essential for understanding system status after deployment
+**Telemetry** - monitoring performance metrics and error rates. Essential for understanding system status after deployment
 
-Load parameters
+**Load parameters**
 	Request per second, reads to writes ratio
 	
-Elastic systems - systems that can scale automatically.
+**Elastic systems** - systems that can scale automatically.
 
 
-Data Models and Query languages
-	Relational vs document model
+**Data Models and Query languages**
 	
-	Ø SQL Databases:
-		○ Pros:
-			§ Better support for joins, and many-to-one and many-to-many relationships
-			§ Reliable for complex transactions and strong consistency
-		○ Cons
-			§ Splitting a document like structure into multiple tables can lead to cumbersome schemas and complex application code
-	Ø No SQL databases:
-		○ Pros
-			§ Schema flexibility
-			§ Better performance due to locality
-			§ For some applications, closer to the data structures used by the application
-		○ Cons:
-			§ Document model can become less appealing for applications with many-to-many relationships
+ ### Relational vs document model
+_______________________________________________________	
+ ## SQL Databases:
+		* Pros:
+			1. Better support for joins, and many-to-one and many-to-many relationships
+			2. Reliable for complex transactions and strong consistency
+		* Cons
+			1. Splitting a document like structure into multiple tables can lead to cumbersome schemas and complex application code
+## No SQL databases:
+		* Pros
+			1. Schema flexibility
+			2. Better performance due to locality
+			3. For some applications, closer to the data structures used by the application
+		* Cons:
+			1. Document model can become less appealing for applications with many-to-many relationships
 
-Data model
+**Data model**
 	• SQL data bases:
 		○ Relational model with tables, rows, and columns.
 		○ Accessed via sql queries
@@ -76,7 +86,7 @@ Data model
 		○ Flexible schema, allowing for adjustments and hierarchical or nested data structures.
 
 
-Schema Flexibility
+**Schema Flexibility**
 	• SQL databases:
 		○ Fixed Schema
 		○ Schema changes require migrations, which can be time-consuming
@@ -84,7 +94,8 @@ Schema Flexibility
 		○ Dynamic schema
 		○ Easier to store different fields or structures in records w/o predefined schema changes.
 
-Consistency and Transactions
+
+**Consistency and Transactions**
 	• SQL databases
 		○ Adhere to Atomicity, consistency, isolation, durability properties
 		○ Ensure reliable transactions and consistency even in system failures.
@@ -96,7 +107,7 @@ Scalability
 	• SQL databases: Typically scale vertically (adding resources to a single server).
 	• NoSQL Databases: Designed to scale out horizontally (distributing data across multiple servers). Can handle large volumes of data and high-velocity workloads more effectively.
 
-Query Language
+**Query Language**
 	• SQL databases:
 		○ Use structured query language
 		○ SQL is powerful for complex queries involving multiple tables.
@@ -111,18 +122,20 @@ Use cases
 		○ Ideal for scenarios where scalability, flexibility, and high performance are critical
 		○ Some good applications are Real-time web applications, big data applications, content management systems
 
+
+
 Document storage
 	• A document is usually stored as a single continuous string, encoded as JSON, XML, or a binary variant (e.g., MongoDB’s BSON). If your application often needs to access the entire document (e.g., to render it on a web page), there is a performance advantage due to this storage locality.
 	• If data is split across multiple tables. . . . multiple index lookups are required to retrieve it all. This can result in more disk seeks and longer retrieval times. The locality advantage is significant if large parts of the document are needed simultaneously.
 
 
+
 Imperative and Declarative Language
-	Ø Imperative: specifies the exact operations in a particular order ( JS, Python)
-	Ø Declarative: Specifies what the result should be, without detailing how to achieve it (CSS, react)
+	1. Imperative: specifies the exact operations in a particular order ( JS, Python)
+	2. Declarative: Specifies what the result should be, without detailing how to achieve it (CSS, react)
 
 
-Map reduce
-	Ø programming model for handling large amounts of data across many machines, popularized by Google.
+Map reduce programming model for handling large amounts of data across many machines, popularized by Google.
 
 ------------------------------------------------------------
 	    # Map
@@ -151,7 +164,7 @@ Map reduce
 	  ```
 ----------------------------------------------------------------------------
 	
-Graph-like Data models
+**Graph-like Data models**
 In scenarios where many-to-many relationships are prevalent, a graph-like data model can be particularly effective. This model consists of the following key components:
 
 Vertices (also known as nodes or entities):
@@ -169,7 +182,8 @@ Each edge can also have attributes or properties that describe the relationship.
 
 
 
-Key Characteristics
+## Key Characteristics
+
 Flexible Schema:
 
 Graph models do not require a rigid schema, allowing the addition of new types of relationships or entities without altering existing data.
