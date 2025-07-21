@@ -13,3 +13,34 @@ flag = True       # bool
 data = [1, 2, 3]  # list
 ```
 
+### Functions
+``` python
+def area_circle(r):
+  return 3.1416 * r ** 2
+```
+
+### IF / ELSE
+``` python
+if x > 5:
+  print("Big")
+elif x == 5:
+  print("Medium")
+else:
+  print("small")
+```
+
+### Loops
+``` python
+for i in range(5):
+  print(i)
+
+while True:
+  break
+```
+
+### List Comprehension
+``` python
+squares = [i**2 for i in range(10) if i % 2 == 0]
+```
+
+### Enumerate
