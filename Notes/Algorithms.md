@@ -5,7 +5,8 @@ Algorithms
 
 Static Arrays
 
-Operation	Big-O Time	Notes
+|Operation|	Big-O Time|	Notes|
+|---------|---------------|----------|
 Reading 	O(1)	Reading an element by index is constant time.
 Insertion	O(n)*	Insertion at the end of the array 'push()' is typically O(1) on average. However, resizing may ocassionaly lead to O(n) time complexity.
 Deletion	O(n)*	Deletion from the end of the array 'pop()' is typically O(1) on average. However, resizing may occasionally lead to  O(n) time complexity.
