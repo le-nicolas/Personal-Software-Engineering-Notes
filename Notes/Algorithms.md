@@ -1,17 +1,17 @@
-Algorithms
-
+## Algorithms
+_________________________________________________________________________________________
 <img width="1750" height="1094" alt="image" src="https://github.com/user-attachments/assets/947b3958-d4a8-4fe9-9526-11a4ef347d22" />
 
 
-Static Arrays
+### Static Arrays
 
 |Operation|	Big-O Time|	Notes|
 |---------|---------------|----------|
-Reading 	O(1)	Reading an element by index is constant time.
-Insertion	O(n)*	Insertion at the end of the array 'push()' is typically O(1) on average. However, resizing may ocassionaly lead to O(n) time complexity.
-Deletion	O(n)*	Deletion from the end of the array 'pop()' is typically O(1) on average. However, resizing may occasionally lead to  O(n) time complexity.
+|Reading |	O(1)|	Reading an element by index is constant time.|
+|Insertion|	O(n)*|	Insertion at the end of the array 'push()' is typically O(1) on average. However, resizing may ocassionaly lead to O(n) time complexity.|
+|Deletion|	O(n)*|	Deletion from the end of the array 'pop()' is typically O(1) on average. However, resizing may occasionally lead to  O(n) time complexity.|
 
-Dynamic Arrays /  Python lists
+### Dynamic Arrays /  Python lists
 
 Operation	Big-O Time	Notes
 Reading	O(1)	Reading an element by index is constant time, similar to regular arrays
