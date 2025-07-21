@@ -14,6 +14,7 @@ ________________________________________________________________________________
 ### Dynamic Arrays /  Python lists
 
 |Operation|	Big-O Time|	Notes|
+|---------|---------------|----------|
 |Reading|	O(1)|	Reading an element by index is constant time, similar to regular arrays|
 |Insertion|	O(1)* |	Insertion at the end of the list ('append()' operation) is typically O(1) on average. However, inserting in the middle requires shifting, leading to O(n) time complexity.|
 |Deletion|	O(1)* |	Deletion from the end of the list ('pop()' operation) is typically O(1) on average. However, deleting from the middle requires shifting, leading to O(n) time complexity.|
@@ -22,12 +23,14 @@ ________________________________________________________________________________
 
 ## Stacks
 |Operation|	Big-O time|	Notes|
+|---------|---------------|----------|
 |Push|	O(1)| None |	
 |Pop|	O(1)* |	Check if the  stack is empty first.|
 |Peek/top|	O(1)* |	Retrieves without removing|
 
 ## Linked Lists ( 1 Direction)
 |Operation|	Big-O Time|	Notes|
+|---------|---------------|----------|
 |Access|	O(n)|	None|
 |Search|	O(n)* |	none| 	
 |Insertion|	O(1)* |	Assuming you have the reference to the desired position|
@@ -35,50 +38,54 @@ ________________________________________________________________________________
 
 ## Linked List (2 Directions)
 |Operation| 	Big-O time|	Notes|
-Access	O(n)	
-Search	O(n)*	
-Insertion	O(1)*	Assuming you have the reference for desired position
-Deletion	O(1)*	Assuming you have the reference for desired position
+|---------|---------------|----------|
+|Access|	O(n)| none |
+|Search|	O(n)* | none |	
+|Insertion|	O(1)* |	Assuming you have the reference for desired position|
+|Deletion|	O(1)* |	Assuming you have the reference for desired position|
 
-Queues
-Operation	Big-O time	Notes
-Enqueue	O(1)	
-Dequeue	O(1)	
+## Queues
+|Operation|	Big-O time|
+|---------|---------------|
+|Enqueue|	O(1)|	
+|Dequeue|	O(1)|	
 
-Binary Trees
-Operation	Big-O time	Notes
-Search	O(log n)	Depends on the height of the binary tree
-Insertion	O(log n)	"same"
-Deletion	O(log n)	"same"
-Traversal	O(n)	In-order, Pre-order, Post-order traversals
-Finding height	O(n)	Worst case if the tree is unbalanced
-Finding depth	O(n)	Worst case if the tree is unbalanced
+## Binary Trees
+|Operation|	Big-O time|	Notes|
+|---------|---------------|----------|
+|Search|	O(log n)|	Depends on the height of the binary tree|
+|Insertion|	O(log n)|	"same"|
+|Deletion|	O(log n)|	"same"|
+|Traversal|	O(n)|	In-order, Pre-order, Post-order traversals|
+|Finding height|	O(n)|	Worst case if the tree is unbalanced|
+|Finding depth|	O(n)|	Worst case if the tree is unbalanced|
 
-Heaps
-Operation	Big-O time	Notes
-Insertion	O(log n)	Heapify up operation
-Deletion(Root)	O(log n)	Heapify down operation
-Search	O(n)	Linear search through the array
-Extract minimum	O(log n)	Removal of the root followed by heapify down
-Extract maximum	O(log n)	Removal of the root followed by heapify down
-Peek minimum	O(1)	Accessing the root
-Peek maximum	O(1)	Accessing the root
-Heapify	O(n)	Building a heap from an unsorted array
-Merge 	O(n log n)	Building a new heap from two existing heaps
+## Heaps
+|Operation|	Big-O time|	Notes|
+|---------|---------------|----------|
+|Insertion|	O(log n)|	Heapify up operation|
+|Deletion(Root)|	O(log n)|	Heapify down operation|
+|Search|	O(n)|	Linear search through the array|
+|Extract minimum|	O(log n)|	Removal of the root followed by heapify down|
+|Extract maximum|	O(log n)|	Removal of the root followed by heapify down|
+|Peek minimum|	O(1)|	Accessing the root|
+|Peek maximum|	O(1)|	Accessing the root|
+|Heapify|	O(n)|	Building a heap from an unsorted array|
+|Merge| 	O(n log n)|	Building a new heap from two existing heaps|
 
-Hashmaps
-Operation	Average case	Worst case	Notes
-Insertion	O(1)	O(n)	Depends on load factor and collision resolution
-Deletion	O(1)	O(n)	Same
-Search	O(1)	O(n)	Same
-Access	O(1)	O(n)	Same
-Collision avoid	- 	O(n)	Depends on implementation and hashing algorithm
-Rehashing	O(n)	O(n)	Depends on the number of elements and load factor
+## Hashmaps
+|Operation|	Average case|	Worst case|	Notes|
+|---------|-----------------|-------------|----------|
+|Insertion|	O(1)|	O(n)|	Depends on load factor and collision resolution|
+|Deletion|	O(1)|	O(n)|	Same|
+|Search|	O(1)|	O(n)|	Same|
+|Access|	O(1)|	O(n)|	Same|
+|Collision avoid|	-| 	O(n)|	Depends on implementation and hashing algorithm|
+|Rehashing|	O(n)|	O(n)|	Depends on the number of elements and load factor|
 
-Sorting algorithms
-
-Algorithm	Time complexity		Space Complexity	
-	Best	Average	Worst	Worst
+## Sorting algorithms
+|Algorithm|	Time complexity|	|	Space Complexity|	|
+|	|Best|	Average|	Worst|	Worst|
 Mergesort	O(n log n)	O(n log n)	O(n log n)	O(n)
 Quicksort	O(n log n)	O(n log n)	O(n^2)	O(log n) - O(n)
 Insertion Sort	O(n)	O(n^2)	O(n^2)	O(1)
