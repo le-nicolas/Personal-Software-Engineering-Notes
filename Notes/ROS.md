@@ -4,6 +4,7 @@ This is a vibrant user community contributes many open source packages for commo
 
 Roboticists often architect a robot application as a modular set of ROS nodes that can be deployed both to real robots and to computers that interface with simulators. In a simulation, developers build a virtual world that mirrors the real robot’s target use case. By testing in this simulated ecosystem, users can iterate on designs quickly before testing in the real world and ultimately deploying to production.
 
+<img width="1250" height="1570" alt="image" src="https://github.com/user-attachments/assets/7d5218be-89a1-41c0-a68b-aa295fa11270" />
 
 
 A great example is a simple pick and place manipulation task. 
@@ -33,6 +34,7 @@ Simulation powering autonomy
 
 Another sample of a digital twin
 
+<img width="1295" height="728" alt="image" src="https://github.com/user-attachments/assets/8397e75f-a35d-4a03-a453-f513d791c966" />
 
 
 
@@ -41,6 +43,7 @@ Recreated the Unity Brighton office
 	
 
 Another example
+<img width="630" height="548" alt="image" src="https://github.com/user-attachments/assets/944d1b03-d8cb-4c35-bf64-1bd9dc8f1907" />
 
 
 
