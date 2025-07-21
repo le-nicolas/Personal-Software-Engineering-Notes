@@ -10,4 +10,4 @@ Therefore, here is my cheat sheet to those kind of stuff. . .
 
 Delete unused containers:
 
-'''docker container prune'''
+<pre lang="markdown"> ```bash docker container prune ''' </pre>
