@@ -10,7 +10,7 @@
 
 ## [Google Compute Engine](Notes/Google_Compute_engine.md)
 
-## [Data intensive apps](Notes/Designing_data_intensive apps.md)
+## [Data_intensive_apps](Notes/Designing_data_intensive apps.md)
 
 ## [Docker](Notes/Docker.md)
 
