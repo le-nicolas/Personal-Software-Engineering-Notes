@@ -10,4 +10,15 @@ Therefore, here is my cheat sheet to those kind of stuff. . .
 
 Delete unused containers:
 
-<pre lang="markdown"> ```bash docker container prune ''' </pre>
+## 🧹 Remove All Stopped Containers
+
+To clean up your Docker environment and remove all stopped containers, run:
+
+```bash
+$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+abc123def456
+ghi789jkl012
+
