@@ -1,17 +1,19 @@
-System Design :D
-
 Amazon Relational Database Service(RDS), can get you a database server with 24 TB of Ram, e.g. stackoverflow in 2013 had over 10 million monthly unique visitor, but it only had 1 master database. Woah!
+_____________________________________________________________________________________
 
-Basics
+<img width="1280" height="720" alt="1719946058232" src="https://github.com/user-attachments/assets/75644f7a-badd-4ec2-bfd2-c6c428a62141" />
 
-Memory units(American orders of magnitude)
 
-Power	Approx value	Short name	Numeric Rep. (bytes)	Number of 0s
-10	1 thousand 	1 KB	1000	3
-20	1 million	1 MB	1000000	6
-30	1 billion	1 gb	1000000000	9
-40	1 Trillion	1 tb	1000000000000	12
-50	1 Quadrillion	1 Pb	1000000000000000	15
+
+## Memory units(American orders of magnitude)
+
+|Power|	Approx value|	Short name|	Numeric Rep. (bytes)|	Number of 0s|
+|-----|-------------|-------------|-------------------------|---------------|
+|10|	1 thousand |	1 KB|	1000|	3|
+|20|	1 million|	1 MB|	1000000|	6|
+|30|	1 billion|	1 gb|	1000000000|	9|
+|40|	1 Trillion|	1 tb|	1000000000000|	12|
+|50|	1 Quadrillion|	1 Pb|	1000000000000000|	15|
 
 Big data = Tb or Petabytes
 
