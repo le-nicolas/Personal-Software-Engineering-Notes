@@ -18,4 +18,4 @@
 
 ## [Relational Db](Notes/Relational_DBs.md)
 
-## [djange](Notes/django.md)
+## [django](Notes/django.md)
