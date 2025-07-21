@@ -180,9 +180,14 @@ These methods allow classes to define specific behavior that gets invoked in res
 
 # Iterators
 an object that is used to iterate over iterable objects like listss, tuples, dicts, and sets. The python iterators object is initialized using the iter() method. it uses the next() method for iteration.
-  * __iter__() : the iter() method is called for the initialization of an iterator
-
-
+  * __iter__() : the iter() method is called for the initialization of an iterator. This returns an iterator object.
+  * __next__() # The next method returns the next value for the iterable. When we use a for loop to traverse any iterable object, internally it uses the iter() method to get an iterator object, which further uses the next() method to iterate over. This method raises a StopIteration to signal the end of the iteration.
+  * 	string = "GFG"
+	ch_iterator = iter(string)
+	 
+	print(next(ch_iterator)) # -> G
+	print(next(ch_iterator)) # -> F
+	print(next(ch_iterator)) # -> G
 
 ### Files, JSON, CSV
 ``` python
@@ -258,4 +263,77 @@ async def run():
 asyncio.run(run())
 # this is for websocket clients, voice command engines, or local llm system
 ```
+
+Generators - allow you to iterate over a sequence of items without storing them all in memory at once. They are implemented using a special type of function using yield expressions.
+
+Here are key points about Python generators:
+
+Lazy Evaluation: Generators generate values on-the-fly as they are requested instead of generating them all at once and storing them in memory. This is achieved using the yield statement instead of return.
+-Memory Efficiency: Since generators produce values one at a time, they are memory efficient especially for large datasets or infinite sequences.
+
+Iteration Support: Generators support iteration automatically, which means you can use them in loops or any other context that expects an iterable.
+
+State Maintenance: The state of local variables in a generator function is remembered between calls. This allows you to write complex iterative algorithms.
+
+Syntax: Generators are defined using a function that contains one or more yield statements. When called, they return a generator object, which can be iterated over using a for loop or by explicitly calling next() on it.
+
+e.g. 
+def square_generator(n):
+    for i in range(n):
+        yield i ** 2
+
+# Using the generator
+gen = square_generator(5)
+for num in gen:
+    print(num)
+
+# Output:
+# 0
+# 1
+# 4
+# 9
+# 16
+
+
+Generators are handy when you want to access an array of values but don’t want to store them in memory at once. 
+
+Yield
+	Generators are a special type of iterable that allow you to iterate over a sequence of values lazily, meaning that they produce values on-the-fly as they are requested rather than generating the entire sequence upfront and storing it in memory.
+	
+	When you use yield inside a function, it turns that function into a generator function. Instead of using return to return a single value and exit the function, yield is used to yield a value to the caller while suspending the state of the function. This allows the function to be resumed from where it left off the next time it is called.
+	
+e.g. 
+	def count_up_to(n):
+	    count = 1
+	    while count <= n:
+	        yield count
+	        count += 1
+	
+	# Using the generator function
+	counter = count_up_to(5)
+	print(next(counter))  # Output: 1
+	print(next(counter))  # Output: 2
+	print(next(counter))  # Output: 3
+
+
+In this example, count_up_to is a generator function that yields numbers from 1 up to n. When you call next(counter), it starts or resumes execution of the generator function until the next yield statement, where it yields the value and pauses execution. The function retains its state, so subsequent calls to next() continue from where it left off.
+
+Using yield allows for memory-efficient iteration over large sequences, as only one value needs to be stored in memory at a time, unlike with lists where the entire sequence is stored. Additionally, it enables lazy evaluation, meaning that values are generated only when needed, which can improve performance in certain scenarios.
+
+
+Serialization - 
+the process of converting complex data structures, such as objects or data collections, into a format that can be easily stored or transmitted and later reconstructed back into its original form. This process is essential for tasks like saving data to a file, sending data over a network, or storing data in a database.
+
+Python provides several built-in modules for serialization, such as:
+
+pickle: This module can serialize Python objects into a binary format. It can handle almost any Python object, including custom classes and functions.
+
+json: This module serializes Python objects into a human-readable format called JSON (JavaScript Object Notation). JSON is commonly used for transmitting data between a server and a client over a network.
+
+marshal: This module is similar to pickle but is more restricted in terms of the types of objects it can serialize. It is primarily used for serializing Python code objects.
+
+shelve: This module provides a simple interface for persistently storing Python objects in a dictionary-like format.
+
+Serialization is particularly useful for tasks like data storage, data exchange between different systems or languages, and caching. However, it's essential to consider security implications, especially when deserializing data, as it can lead to security vulnerabilities if not handled properly.
+
 
