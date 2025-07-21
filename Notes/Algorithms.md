@@ -85,6 +85,7 @@ ________________________________________________________________________________
 
 ## Sorting algorithms
 |Algorithm|	Time complexity|	|	Space Complexity|	|
+|---------|--------------------|--------|-----------------------|-------|
 |	|Best|	Average|	Worst|	Worst|
 Mergesort	O(n log n)	O(n log n)	O(n log n)	O(n)
 Quicksort	O(n log n)	O(n log n)	O(n^2)	O(log n) - O(n)
