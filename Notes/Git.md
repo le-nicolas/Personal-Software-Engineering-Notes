@@ -39,4 +39,4 @@ The removal of the file from the head revision will happen on the next commit.
 
 WARNING: While this will not remove the physical file from your local machine, it will remove the files from other developers' machines on their next git pull.
 
-<img width="534" height="1268" alt="image" src="https://github.com/user-attachments/assets/b771de8e-5f03-45f6-b5df-2d4a7c4a85fa" />
+
