@@ -9,4 +9,5 @@ Therefore, here is my cheat sheet to those kind of stuff. . .
 
 
 Delete unused containers:
-'docker container prune'
+
+'''docker container prune'''
